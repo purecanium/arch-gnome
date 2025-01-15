@@ -13,10 +13,10 @@ git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin
 makepkg -si --noconfirm && cd ..
 
 # Install essential packages
-sudo pacman -S nano ufw bluez cups dconf --needed --noconfirm
+sudo pacman -S nano ufw bluez dconf cups --needed --noconfirm
 
 # Install basic packages
-sudo pacman -S fish firefox gufw dconf-editor ntfs-3g gvfs-onedrive gparted qt5ct qbittorrent networkmanager-openvpn --needed --noconfirm
+sudo pacman -S fish firefox gufw dconf-editor fwupd sbctl stow android-tools ntfs-3g gvfs-onedrive gparted qt5ct qbittorrent networkmanager-openvpn --needed --noconfirm
 
 # Install extra packages
 sudo pacman -S vlc keepassxc jellyfin-server jellyfin-ffmpeg jellyfin-web --needed --noconfirm
@@ -27,8 +27,7 @@ sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra --nee
 # Set-up firewall
 sudo ufw limit 22/tcp
 sudo ufw allow 80/tcp
-sudo ufw allow 443/tcp
-sudo ufw allow 8096/tcp #Jellyfin Media Server
+sudo ufw allow 443/tc
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw enable
