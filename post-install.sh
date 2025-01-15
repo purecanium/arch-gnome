@@ -43,7 +43,7 @@ sudo bat-asus-battery persist
 
 # Set scroll-speed to 0.3 (sweet spot for my touchpad)
 yay -S libinput-config --needed --noconfirm
-sudo echo "scroll-factor=0.3" > /etc/libinput.conf
+sudo sh -c 'echo "scroll-factor=0.3" > /etc/libinput.conf'
 
 # Enable bluetooth service
 sudo systemctl enable --now bluetooth.service
