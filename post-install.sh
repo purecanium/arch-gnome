@@ -13,7 +13,7 @@ git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin
 makepkg -si --noconfirm && cd ..
 
 # Install essential packages
-sudo pacman -S nano ufw bluez cups deconf --needed --noconfirm
+sudo pacman -S nano ufw bluez cups dconf --needed --noconfirm
 
 # Install basic packages
 sudo pacman -S fish firefox gufw dconf-editor ntfs-3g gvfs-onedrive gparted qt5ct qbittorrent networkmanager-openvpn --needed --noconfirm
