@@ -1,0 +1,9 @@
+back up keybindings 
+back up dconf-editor file
+firefox profle
+gdm settings
+qt5ct settings
+gnome-tweak settings (?)
+extension (maybe)
+
+jellyfin backup and restore
