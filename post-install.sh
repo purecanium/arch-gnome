@@ -1,5 +1,5 @@
 #!/bin/bash
-Set -e
+set -e
 
 # 
 # Archlinux Gnome post install script for my laptop use
