@@ -19,22 +19,22 @@ sudo pacman -S nano ufw bluez dconf cups --needed --noconfirm
 sudo pacman -S fish firefox gufw dconf-editor fwupd sbctl stow android-tools ntfs-3g gvfs-onedrive gparted qt5ct qbittorrent networkmanager-openvpn --needed --noconfirm
 
 # Install extra packages
-sudo pacman -S vlc keepassxc jellyfin-server jellyfin-ffmpeg jellyfin-web --needed --noconfirm
+sudo pacman -S vlc keepassxc adw-gtk-theme jellyfin-server jellyfin-ffmpeg jellyfin-web --needed --noconfirm
 
 # Install basic fonts
-sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra --needed --noconfirm
+sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-jetbrains-mono-nerd --needed --noconfirm
 
 # Set-up firewall
 sudo ufw limit 22/tcp
 sudo ufw allow 80/tcp
-sudo ufw allow 443/tc
+sudo ufw allow 443/tcp
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw enable
 sudo systemctl enable --now ufw.service
 
 # Install AUR Packages
-yay -S extension-manager gdm-settings reflector-simple --needed --noconfirm
+yay -S extension-manager gdm-settings reflector-simple adwaita-qt5 --needed --noconfirm
 
 # Set battery threshold to 80%
 yay -S bat-asus-battery-bin --needed --noconfirm

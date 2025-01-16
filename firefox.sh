@@ -33,6 +33,7 @@ case $choice in
             exit 1
         fi
 
+        mkdir -p $HOME/.mozilla/firefox
         PS3="Select a backup to restore (or type 'cancel' to exit): "
         select CHOSEN_BACKUP in "${BACKUP_FILES[@]}" "cancel"; do
             if [[ "$CHOSEN_BACKUP" == "cancel" ]]; then
