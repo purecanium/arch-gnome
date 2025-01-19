@@ -16,7 +16,7 @@ makepkg -si --noconfirm && cd ..
 sudo pacman -S nano ufw bluez dconf cups --needed --noconfirm
 
 # Install basic packages
-sudo pacman -S fish firefox gufw dconf-editor fwupd sbctl stow android-tools ntfs-3g gvfs-onedrive gparted qt5ct qbittorrent networkmanager-openvpn --needed --noconfirm
+sudo pacman -S fish firefox gufw dconf-editor fwupd sbctl stow android-tools ntfs-3g gvfs-onedrive gparted qt5ct qbittorrent networkmanager-openvpn power-profiles-daemon --needed --noconfirm
 
 # Install extra packages
 sudo pacman -S vlc keepassxc adw-gtk-theme jellyfin-server jellyfin-ffmpeg jellyfin-web --needed --noconfirm
