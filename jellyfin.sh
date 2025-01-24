@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env
+set -e
 
 # Jellyfin back up and restore script
 
@@ -27,7 +28,7 @@ case $choice in
     2)
         echo "Available backups:"
         BACKUP_FILES=($(ls "$BACKUP_DIR"/*.tar.gz 2>/dev/null))
-        
+
         if [ ${#BACKUP_FILES[@]} -eq 0 ]; then
             echo "No backups found."
             exit 1

@@ -1,9 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env
 set -e
 
-# 
 # Archlinux Gnome post install script for my laptop use
-# 
 
 # Install git and base-devel
 sudo pacman -S git base-devel --needed --noconfirm

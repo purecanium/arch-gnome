@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env
+set -e
 
 # dconf back up and restore
 
@@ -21,7 +22,7 @@ case $choice in
     2)
         echo "Available backups:"
         BACKUP_FILES=("$BACKUP_DIR"/dconf-backup_*)
-        
+
         if [ ${#BACKUP_FILES[@]} -eq 0 ]; then
             echo "No backups found."
             exit 1
