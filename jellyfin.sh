@@ -1,4 +1,4 @@
-#!/usr/bin/env
+#!/bin/sh
 set -e
 
 # Jellyfin back up and restore script

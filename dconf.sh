@@ -1,4 +1,4 @@
-#!/usr/bin/env
+#!/bin/sh
 set -e
 
 # dconf back up and restore

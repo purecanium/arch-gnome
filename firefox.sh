@@ -1,4 +1,4 @@
-#!/usr/bin/env
+#!/bin/sh
 set -e
 
 # Firefox profile back up and restore
