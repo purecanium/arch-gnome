@@ -3,7 +3,7 @@ set -e
 
 # Jellyfin back up and restore script
 
-BACKUP_DIR="$HOME/Documents/backups/jellyfin"
+BACKUP_DIR="$HOME/Documents/.backups/jellyfin"
 DATA_DIR="/var/lib/jellyfin"
 CONFIG_DIR="/etc/jellyfin"
 
