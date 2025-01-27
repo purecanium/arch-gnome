@@ -34,7 +34,7 @@ case $choice in
             exit 1
         fi
 
-        PS3="Select a backup to restore (or type 'cancel' to exit): "
+        PS3="Select a backup to restore: "
         select CHOSEN_BACKUP in "${BACKUP_FILES[@]}" "cancel"; do
             if [[ "$CHOSEN_BACKUP" == "cancel" ]]; then
                 echo "Restore canceled."
