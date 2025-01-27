@@ -26,6 +26,7 @@ sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-j
 sudo ufw limit 22/tcp
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
+sudo ufw allow 6881:6889/udp 
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw enable
