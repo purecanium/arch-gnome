@@ -14,7 +14,7 @@ makepkg -si --noconfirm && cd ..
 sudo pacman -S nano ufw bluez dconf cups --needed --noconfirm
 
 # Install basic packages
-sudo pacman -S fish firefox gufw dconf-editor fwupd sbctl stow android-tools ntfs-3g gvfs-onedrive gparted qt5ct qbittorrent networkmanager-openvpn power-profiles-daemon --needed --noconfirm
+sudo pacman -S fish firefox gufw dconf-editor fwupd sbctl stow android-tools ntfs-3g gvfs-onedrive gparted qt6ct qbittorrent networkmanager-openvpn power-profiles-daemon --needed --noconfirm
 
 # Install extra packages
 sudo pacman -S vlc keepassxc adw-gtk-theme jellyfin-server jellyfin-ffmpeg jellyfin-web --needed --noconfirm
@@ -36,9 +36,9 @@ sudo systemctl enable --now ufw.service
 yay -S extension-manager gdm-settings reflector-simple adwaita-qt5 --needed --noconfirm
 
 # Set battery threshold to 80%
-yay -S bat-asus-battery-bin --needed --noconfirm
-sudo bat-asus-battery threshold 80
-sudo bat-asus-battery persist
+#yay -S bat-asus-battery-bin --needed --noconfirm
+#sudo bat-asus-battery threshold 80
+#sudo bat-asus-battery persist
 
 # Set scroll-speed to 0.3 (sweet spot for my touchpad)
 yay -S libinput-config --needed --noconfirm
