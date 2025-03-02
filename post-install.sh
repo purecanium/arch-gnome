@@ -53,6 +53,9 @@ sudo systemctl enable --now power-profiles-daemon.service
 # Enable cups (printing system) service
 sudo systemctl enable --now cups.service
 
+# Add ntfs-3g plugin for accessing onedrive folder in Linux
+sudo cp ./ntfs-plugin-9000001a.so /usr/lib64/ntfs-3g/
+
 # Create directories before stowing
 mkdir -p "$HOME/.config"
 mkdir -p "$HOME/.local/share/applications"
