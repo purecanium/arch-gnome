@@ -33,9 +33,9 @@ sudo ufw enable
 sudo systemctl enable --now ufw.service
 
 # Install AUR Packages
-yay -S extension-manager gdm-settings reflector-simple adwaita-qt5 --needed --noconfirm
+yay -S extension-manager gdm-settings reflector-simple adwaita-qt6 --needed --noconfirm
 
-# Set battery threshold to 80%
+# Set battery threshold to 80% (I currently use a Gnome extension as an alternative)
 #yay -S bat-asus-battery-bin --needed --noconfirm
 #sudo bat-asus-battery threshold 80
 #sudo bat-asus-battery persist
@@ -47,8 +47,16 @@ sudo sh -c 'echo "scroll-factor=0.3" > /etc/libinput.conf'
 # Enable bluetooth service
 sudo systemctl enable --now bluetooth.service
 
+# Enable power profiles daemon
+sudo systemctl enable --now power-profiles-daemon.service
+
 # Enable cups (printing system) service
 sudo systemctl enable --now cups.service
+
+# Create directories before stowing
+mkdir -p "$HOME/.config"
+mkdir -p "$HOME/.local/share/applications"
+mkdir -p "$HOME/.local/share/icons"
 
 echo
 echo
