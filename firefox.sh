@@ -9,7 +9,7 @@ PROFILE_DIR="$HOME/.mozilla/firefox"
 mkdir -p "$BACKUP_DIR"
 
 echo "Choose an option:"
-echo "1) Backup Firefox Profiles"
+echo "1) Back up Firefox Profiles"
 echo "2) Restore Firefox Profiles"
 read -p "Enter choice (1 or 2): " choice
 
