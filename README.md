@@ -1,1 +1,1 @@
-Archlinux Gnome backu p, restore, and after-install configuratio.
+Archlinux Gnome back up, restore, and after-install configuratio.
