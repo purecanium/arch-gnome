@@ -3,7 +3,7 @@ set -e
 
 # dconf back up and restore
 
-BACKUP_DIR="$HOME/Documents/.backups/dconf"
+BACKUP_DIR="$HOME/Documents/.hidden/backups/dconf"
 mkdir -p "$BACKUP_DIR"
 
 echo "Choose an option:"

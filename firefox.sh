@@ -3,7 +3,7 @@ set -e
 
 # Firefox profile back up and restore
 
-BACKUP_DIR="$HOME/Documents/.backups/firefox"
+BACKUP_DIR="$HOME/Documents/.hidden/backups/firefox"
 PROFILE_DIR="$HOME/.mozilla/firefox"
 
 mkdir -p "$BACKUP_DIR"
