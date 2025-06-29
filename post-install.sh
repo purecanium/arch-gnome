@@ -26,11 +26,16 @@ sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-j
 sudo ufw limit 22/tcp
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
-sudo ufw allow 6881:6889/udp 
+#sudo ufw allow 6881:6889/udp 
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw enable
 sudo systemctl enable --now ufw.service
+
+# Firewall exception for Gsconnect (KDE Connect)
+sudo ufw allow 1714:1764/udp
+sudo ufw allow 1714:1764/tcp
+sudo ufw reload
 
 # Install AUR Packages
 yay -S extension-manager gdm-settings reflector-simple adwaita-qt6 --needed --noconfirm
@@ -64,33 +69,4 @@ mkdir -p "$HOME/.local/share/icons"
 echo
 echo
 
-# Silent Boot Configuration
-echo -e "## Silent Boot Configuration\n"
-echo -e "1. \033[1mEdit Kernel Command Line\033[0m"
-echo -e "   - Append the following to /etc/kernel/cmdline:"
-echo -e "     \033[3mquiet splash loglevel=3 vt.global_cursor_default=0 plymouth.ignore-serial-consoles\033[0m"
-echo -e "   - Example:"
-echo -e "     \033[3mroot=PARTUUID=xxxx-xxxx-xxxx-xxxx rw quiet splash loglevel=3 vt.global_cursor_default=0 plymouth.ignore-serial-consoles\033[0m\n"
-echo -e "2. \033[1mReinstall the Kernel\033[0m"
-echo -e "   - Run:"
-echo -e "     \033[3msudo pacman -S linux\033[0m\n"
-
-# Plymouth Splash Screen Setup
-echo -e "## Plymouth Splash Screen Setup\n"
-echo -e "1. \033[1mInstall Plymouth\033[0m"
-echo -e "   - Run:"
-echo -e "     \033[3msudo pacman -S plymouth\033[0m\n"
-echo -e "2. \033[1mModify mkinitcpio Configuration\033[0m"
-echo -e "   - Open /etc/mkinitcpio.conf:"
-echo -e "     \033[3msudo nano /etc/mkinitcpio.conf\033[0m"
-echo -e "   - Add 'plymouth' before 'filesystems' in the HOOKS line:"
-echo -e "     \033[3mHOOKS=(base udev autodetect modconf block plymouth filesystems keyboard fsck)\033[0m\n"
-echo -e "3. \033[1mRegenerate Initramfs\033[0m"
-echo -e "   - Run:"
-echo -e "     \033[3msudo mkinitcpio -P\033[0m\n"
-echo -e "4. \033[1mSet Plymouth Theme\033[0m"
-echo -e "   - Set theme to 'bgrt' (or your preferred theme):"
-echo -e "     \033[3msudo plymouth-set-default-theme -R bgrt\033[0m\n"
-echo -e "5. \033[1mEnable Plymouth Service at Boot\033[0m"
-echo -e "   - Run:"
-echo -e "     \033[3msudo systemctl enable plymouth-start.service\033[0m\n"
+sh ./splashscreen_boot.sh

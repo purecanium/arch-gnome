@@ -19,10 +19,10 @@ case $choice in
         echo "Backing up Jellyfin..."
         TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
         BACKUP_FILE="$BACKUP_DIR/jellyfin_$TIMESTAMP.tar.gz"
-        sudo systemctl disable --now jellyfin.service
+        #sudo systemctl disable --now jellyfin.service
         sudo tar -czf "$BACKUP_FILE" "$DATA_DIR" "$CONFIG_DIR"
         sudo chown "$USER:$USER" "$BACKUP_FILE"
-        sudo systemctl enable --now jellyfin.service
+        #sudo systemctl enable --now jellyfin.service
         echo "Backup completed: $BACKUP_FILE"
         ;;
     2)
