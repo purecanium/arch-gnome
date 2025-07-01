@@ -6,7 +6,7 @@ set -e
 # Install git and base-devel
 sudo pacman -S git base-devel --needed --noconfirm
 
-# Install yay
+# Install yay (AUR helper)
 git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin
 makepkg -si --noconfirm && cd ..
 
@@ -14,19 +14,22 @@ makepkg -si --noconfirm && cd ..
 sudo pacman -S nano ufw bluez dconf cups --needed --noconfirm
 
 # Install basic packages
-sudo pacman -S fish firefox gufw dconf-editor fwupd sbctl stow android-tools ntfs-3g gvfs-onedrive gparted qt6ct qbittorrent networkmanager-openvpn power-profiles-daemon os-prober --needed --noconfirm
+sudo pacman -S fish firefox gufw dconf-editor fwupd sbctl stow android-tools ntfs-3g \
+               gvfs-onedrive gparted qt6ct qbittorrent networkmanager-openvpn \
+               power-profiles-daemon --needed --noconfirm
 
 # Install extra packages
-sudo pacman -S vlc keepassxc adw-gtk-theme jellyfin-server jellyfin-ffmpeg jellyfin-web --needed --noconfirm
+sudo pacman -S vlc keepassxc adw-gtk-theme jellyfin-server jellyfin-ffmpeg jellyfin-web \
+               --needed --noconfirm
 
 # Install basic fonts
-sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-jetbrains-mono-nerd --needed --noconfirm
+sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra \
+               ttf-jetbrains-mono-nerd --needed --noconfirm
 
 # Set-up firewall
 sudo ufw limit 22/tcp
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
-#sudo ufw allow 6881:6889/udp 
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw enable
@@ -60,6 +63,12 @@ sudo systemctl enable --now cups.service
 
 # Add ntfs-3g plugin for accessing onedrive folder in Linux
 sudo cp ./ntfs-plugin-9000001a.so /usr/lib64/ntfs-3g/
+
+# Change default systemd power key and lid behavior
+sudo sed -i \
+  -e '/^#\?HandlePowerKey=/c\HandlePowerKey=suspend' \
+  -e '/^#\?HandleLidSwitch=/c\HandleLidSwitch=ignore' \
+  /etc/systemd/logind.conf
 
 # Create directories before stowing
 mkdir -p "$HOME/.config"

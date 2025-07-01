@@ -50,6 +50,7 @@ case $choice in
 
         echo "Restoring Jellyfin from $CHOSEN_BACKUP..."
         sudo systemctl disable --now jellyfin.service
+        sudo ufw allow 8096/tcp
         sudo rm -rf "$DATA_DIR" || true
         sudo rm -rf "$CONFIG_DIR" || true
         sudo tar -xzf "$CHOSEN_BACKUP" -C /
